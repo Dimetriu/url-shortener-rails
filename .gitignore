@@ -13,9 +13,15 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore database config
 /config/database.yml
 
 .byebug_history
+
+# Ignore all .env local development and test files
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
