@@ -13,11 +13,7 @@ jobs:
       # Update bundler
       - run:
           name: update bundler
-          command: gem install bundler:2.0.1 &&
-                   bundle update --bundler
-
-      - run:
-          name: Bundle check || Bundle install
+          command: gem install bundler:2.0.1
 
       # Download and cache dependencies
       - restore_cache:
@@ -34,8 +30,10 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       # Database setup
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load --trace
+      - run:
+          name: setup database
+          command: bundle exec rake db:create &&
+                   bundle exec rake db:schema:load --trace
 
       # run tests!
       - run:
