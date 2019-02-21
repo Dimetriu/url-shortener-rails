@@ -13,7 +13,11 @@ jobs:
       # Update bundler
       - run:
           name: update bundler
-          command: bundle update --bundler
+          command: gem install bundler:2.0.1 &&
+                   bundle update --bundler
+
+      - run:
+          name: Bundle check || Bundle install
 
       # Download and cache dependencies
       - restore_cache:
@@ -35,7 +39,7 @@ jobs:
 
       # run tests!
       - run:
-          name: Run tests
+          name: run tests
           command: |
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
