@@ -1,4 +1,6 @@
-# README
+# Shortencrafts
+
+[![CircleCI](https://circleci.com/gh/Dimetriu/url-shortener-rails.svg?style=svg)](https://circleci.com/gh/Dimetriu/url-shortener-rails)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
