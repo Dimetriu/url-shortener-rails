@@ -3,7 +3,15 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.6-node-browsers-legacy
+        environment:
+          RAILS_ENV: test
+          PGHOST: 127.0.0.1
+          PGUSER: dima
+
       - image: circleci/postgres:11-postgis-ram
+        environment:
+          POSTGRES_USER: dima
+          POSTGRES_DB: url-shortener-rails_test
 
     working_directory: ~/codebase/URL/url-shortener-rails
 
