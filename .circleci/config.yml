@@ -5,10 +5,15 @@ jobs:
       - image: circleci/ruby:2.6-node-browsers-legacy
       - image: circleci/postgres:11-postgis-ram
 
-    working_directory: ~/url-shortener-rails
+    working_directory: ~/codebase/URL/url-shortener-rails
 
     steps:
       - checkout
+
+      # Update bundler
+      - run:
+          name: update bundler
+          command: bundle update --bundler
 
       # Download and cache dependencies
       - restore_cache:
@@ -30,7 +35,7 @@ jobs:
 
       # run tests!
       - run:
-          name: run tests
+          name: Run tests
           command: |
             mkdir /tmp/test-results
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
