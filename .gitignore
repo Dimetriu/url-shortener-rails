@@ -13,9 +13,6 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore database config
-/config/database.yml
-
 .byebug_history
 
 # Ignore all .env local development and test files
