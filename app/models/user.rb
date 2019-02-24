@@ -8,17 +8,12 @@ class User < ApplicationRecord
 
   validates :password,
     presence: true,
-    confirmation: true,
     length: { in: 6..20 }
 
   validates :password_confirmation, presence: true
 
-  def confirmed?
-    self[:confirmed_at].nil?
-  end
-
   def confirm!
-    return self[:confirmed_at] if self[:confirmed_at]
+    return confirmed_at if confirmed_at?
     update_attributes(confirmed_at: DateTime.current)
   end
 end

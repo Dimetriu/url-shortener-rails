@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_02_23_130008) do
     t.datetime "confirmed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.uuid "verification_token", default: -> { "uuid_generate_v4()" }
+    t.uuid "verification_token", default: -> { "uuid_generate_v4()" }, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

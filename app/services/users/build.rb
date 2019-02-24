@@ -1,31 +1,14 @@
-class Users::Build
-  def call(**options)
-    token = SecureRandom.uuid
-
-    User.create!(
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
-      password: password,
-      password_confirmation: password_confirmation,
-      verification_token: token
-    )
+class Users::Build < BuildResource
+  def initialize(resource = User, **options)
+    super(resource, **options)
   end
 
-  def initialize(**options)
-    @firstname               = options[:firstname]
-    @lastname                = options[:lastname]
-    @email                   = options[:email]
-    @password                = options[:password]
-    @password_confirmation   = options[:password_confirmation]
-    @verification_token    ||= ''
+  def call
+    resource[:verification_token] = SecureRandom.uuid
+    resource.valid? && resource.save || resource.errors
   end
 
-  private
-    attr_reader :firstname,
-                :lastname,
-                :email,
-                :password,
-                :password_confirmation,
-                :verification_token
+  def self.call(resource = User, **options)
+    self.new(resource, **options).call
+  end
 end

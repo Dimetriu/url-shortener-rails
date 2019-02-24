@@ -23,7 +23,6 @@ RSpec.describe User, type: :model do
   context "when valid password" do
     it { should validate_presence_of(:password) }
     it { should validate_presence_of(:password_confirmation) }
-    it { should validate_confirmation_of(:password) }
 
     it do
       should validate_length_of(:password)
