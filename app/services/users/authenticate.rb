@@ -1,23 +1,25 @@
 class Users::Authenticate
-  def initialize(email:, password:)
-    @email, @password = email, password
+  attr_reader :token, :error
+
+  def initialize(email, password)
+    @email    = email
+    @password = password
+    @error  ||= {}
   end
 
   def call
-    token
-  end
-
-  # Shorthand from Users::Authenticate.new(...).call
-  def self.call(email:, password:)
-    self.new(email: email, password: password).call
+    produce_token
   end
 
   private
 
   attr_reader :email, :password
+  attr_writer :error
 
-  def token
-    @token = JsonWebToken.encode(user_id: user.id) if user
+  def produce_token
+    return (error[:credentials] = "Invalid credentials") unless user
+
+    @token = JsonWebToken.encode(user_id: user.id)
   end
 
   def user
