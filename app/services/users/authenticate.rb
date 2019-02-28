@@ -19,10 +19,12 @@ class Users::Authenticate
   def produce_token
     return (error[:credentials] = "Invalid credentials") unless user
 
-    @token = JsonWebToken.encode(user_id: user.id)
+    user.update_attributes(session_id: SecureRandom.uuid)
+
+    @token = JsonWebToken.encode(session_id: user.session_id)
   end
 
   def user
-    @user ||= User.find_by(email: email)&.authenticate(password)
+    @user = User.find_by(email: email)&.authenticate(password)
   end
 end

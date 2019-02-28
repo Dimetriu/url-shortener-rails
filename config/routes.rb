@@ -5,7 +5,9 @@ Rails.application.routes.draw do
       defaults format: :json do
 
         scope :users do
-          post :login, to: 'users#login'
+          # resources :sessions, only: [:create, :update]
+            post "sign_in", to: 'sessions#sign_in'
+            patch "sign_out/:id", to: 'sessions#sign_out'
         end
 
       end
