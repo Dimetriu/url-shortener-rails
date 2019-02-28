@@ -1,7 +1,8 @@
 class Api::V1::Users::SessionsController < ApiController
   skip_before_action :authenticate_request!
 
-  def sign_in
+  # POST
+  def login
     session = Users::Authenticate.new(
       params[:email],
       params[:password]
@@ -17,10 +18,11 @@ class Api::V1::Users::SessionsController < ApiController
 
   end
 
-  def sign_out
+  # PATCH
+  def logout
     user = User.find(params[:id])
     user.update_attributes(session_id: nil)
 
-    head :reset_content
+    render json: { logout: true }, status: :reset_content
   end
 end
