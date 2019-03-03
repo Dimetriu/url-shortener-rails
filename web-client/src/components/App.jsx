@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    window.fetch('api/v1/users/login')
+      .then(response => response.json())
+      .then(json => console.log(json))
+      .catch(error => console.log(error))
+  }
+
   render() {
     return (
       <div className="App">
