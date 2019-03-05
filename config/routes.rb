@@ -13,8 +13,8 @@ Rails.application.routes.draw do
             only: :create
 
           scope ":id" do
-            put :update_password, to: 'profile#update_password'
-            put :update_email, to: 'profile#update_email'
+            patch :update_password, to: 'profile#update_password'
+            patch :update_email, to: 'profile#update_email'
           end
         end
 

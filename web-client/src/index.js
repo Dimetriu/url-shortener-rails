@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App.jsx';
 import * as serviceWorker from './serviceWorker';
+// import axios from 'axios';
+// import {
+//   AxiosProvider,
+//   Request,
+//   Get,
+//   Delete,
+//   Head,
+//   Post,
+//   Put,
+//   Patch,
+//   withAxios
+// } from 'react-axios';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
