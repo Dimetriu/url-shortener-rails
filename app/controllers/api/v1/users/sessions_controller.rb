@@ -22,6 +22,6 @@ class Api::V1::Users::SessionsController < ApiController
   def logout
     current_user.update_attributes(session_id: nil)
 
-    render json: { head :no_content }, status: :reset_content
+    render json: { head: :no_content }, status: :reset_content
   end
 end
