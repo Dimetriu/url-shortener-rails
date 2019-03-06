@@ -1,7 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import './index.css';
-import App from './components/App.jsx';
+import UrlShortener from './components/UrlShortener.jsx';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducer from './reducers/rootReducer';
 import * as serviceWorker from './serviceWorker';
 // import axios from 'axios';
 // import {
@@ -16,7 +19,14 @@ import * as serviceWorker from './serviceWorker';
 //   withAxios
 // } from 'react-axios';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = createStore(rootReducer);
+
+render(
+  <Provider store={store}>
+    <UrlShortener />
+  </Provider>,
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

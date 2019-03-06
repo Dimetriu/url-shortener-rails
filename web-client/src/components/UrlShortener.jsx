@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './UrlShortener.css';
 
 import {
   BrowserRouter as Router,
@@ -9,16 +9,16 @@ import {
 
 import Login from './Pages/Login.jsx';
 
-class App extends Component {
+class UrlShortener extends Component {
 
 
   render() {
     return (
-      <div className="App">
+      <div className="UrlShortener">
         <Login />
       </div>
     );
   }
 }
 
-export default App;
+export default UrlShortener;
