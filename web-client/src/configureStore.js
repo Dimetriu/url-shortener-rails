@@ -1,8 +1,7 @@
 
 import {
   applyMiddleware,
-  createStore,
-  compose
+  createStore
 } from 'redux';
 
 import thunkMiddleware from 'redux-thunk';
