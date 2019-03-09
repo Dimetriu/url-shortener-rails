@@ -4,7 +4,7 @@ import './index.css';
 import { Provider } from 'react-redux';
 import configureStore from './configureStore';
 
-import UrlShortener from './components/UrlShortener.jsx';
+import UrlShortener from './components/UrlShortener';
 
 // import * as serviceWorker from './serviceWorker';
 // import axios from 'axios';
