@@ -2,14 +2,21 @@ import React, { Component, Suspense } from 'react';
 import './UrlShortener.css';
 import './fa-library';
 
+import { TextRow } from 'react-placeholder/lib/placeholders';
+import 'react-placeholder/lib/reactPlaceholder.css';
+
 const TopNav = React.lazy(() => import('./Navbars/TopNav'));
 
 class UrlShortener extends Component {
   render() {
+    const topNavPlaceholder = (
+      <TextRow color='#E0E0E0' />
+    );
+
     return (
       <div className="App">
         <header>
-          <Suspense fallback={<h1>Loading...</h1>}>
+          <Suspense fallback={topNavPlaceholder}>
             <TopNav />
           </Suspense>
         </header>
