@@ -36,7 +36,7 @@ import UrlShortener from './components/UrlShortener';
 //   composedEnhancers
 // )
 
-const store = configureStore()
+const store = configureStore();
 
 render(
   <Provider store={store}>
