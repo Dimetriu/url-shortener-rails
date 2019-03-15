@@ -8,9 +8,16 @@ function Home () {
 }
 
 export default class TopNav extends Component {
+  constructor() {
+    super();
+
+    this.state = { yup: true };
+  }
+
   render() {
+
     return (
-      <>
+      <header>
         <nav className="TopNav">
           <Links.Logo />
           <div className="row-clearfix" />
@@ -22,14 +29,8 @@ export default class TopNav extends Component {
             <Links.SignUp />
           </div>
         </nav>
-
-        <Route path="/" exact component={Home} />
-        <Route path="/login" component={login} />
-        <Route path="/signup" component={signup} />
-      </>
+      </header>
     );
   }
 }
 
-const login = lazy(() => import('../Pages/Login'));
-const signup = lazy(() => import('../Pages/SignUp'));

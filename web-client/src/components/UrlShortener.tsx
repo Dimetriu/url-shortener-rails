@@ -1,15 +1,16 @@
-import React, { Component, Suspense } from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import './UrlShortener.css';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './fa-library';
 
 import { TextRow } from 'react-placeholder/lib/placeholders';
 import 'react-placeholder/lib/reactPlaceholder.css';
 
-const TopNav = React.lazy(() => import('./Navbars/TopNav'));
+const TopNav = React.lazy(() => import('./Navbars/TopNav.jsx'));
+
+function Home() {
+  return <h2>Home</h2>;
+}
 
 class UrlShortener extends Component {
   render() {
@@ -17,17 +18,22 @@ class UrlShortener extends Component {
     const topNavPlaceholder = <TextRow color='#E0E0E0' />;
 
     return (
-      <div className="App">
-        <Router>
-          <header>
-            <Suspense fallback={topNavPlaceholder}>
-              <TopNav />
-            </Suspense>
-          </header>
-        </Router>
-      </div>
+      <Router>
+        <div className="App">
+          <Suspense fallback={topNavPlaceholder}>
+            <TopNav />
+
+            <Route path="/" exact component={Home} />
+            <Route path="/login" component={login} />
+            <Route path="/signup" component={signup} />
+          </Suspense>
+        </div>
+      </Router>
     );
   }
 }
+
+const login = lazy(() => import('./Pages/Login'));
+const signup = lazy(() => import('./Pages/SignUp'));
 
 export default UrlShortener;

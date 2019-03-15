@@ -20,22 +20,6 @@ import UrlShortener from './components/UrlShortener';
 //   withAxios
 // } from 'react-axios';
 
-// const middlewareEnhancer = applyMiddleware(
-//   loggerMiddleware,
-//   thunkMiddleware
-// )
-
-// const composedEnhancers = compose(
-//   middlewareEnhancer,
-//   monitorReducerEnhancer
-// )
-
-// const store = createStore(
-//   rootReducer,
-//   undefined,
-//   composedEnhancers
-// )
-
 const store = configureStore();
 
 render(
