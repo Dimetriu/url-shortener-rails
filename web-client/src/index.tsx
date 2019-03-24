@@ -4,7 +4,7 @@ import './index.css';
 import { Provider } from 'react-redux';
 import configureStore from './configureStore';
 
-import UrlShortener from './components/UrlShortener';
+import App from './components/App';
 
 // import * as serviceWorker from './serviceWorker';
 // import axios from 'axios';
@@ -24,7 +24,7 @@ const store = configureStore();
 
 render(
   <Provider store={store}>
-    <UrlShortener />
+    <App />
   </Provider>,
   document.getElementById('root')
 );

@@ -1,7 +1,8 @@
 import * as React from 'react';
-import './UrlShortener.css';
+import { Footer } from './Footer';
+import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import './fa-library';
+import './lib/fa-library';
 
 import { TextRow } from 'react-placeholder/lib/placeholders';
 import 'react-placeholder/lib/reactPlaceholder.css';
@@ -10,7 +11,7 @@ function Home() {
   return <h2>Home</h2>;
 }
 
-class UrlShortener extends React.Component {
+export default class App extends React.Component {
   render() {
     const topNavPlaceholder = <TextRow color='#E0E0E0' />;
 
@@ -24,6 +25,8 @@ class UrlShortener extends React.Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
           </React.Suspense>
+
+          <Footer />
         </main>
       </Router>
     );
@@ -33,5 +36,3 @@ class UrlShortener extends React.Component {
 const TopNav = React.lazy(() => import('./Navs/TopNav'));
 const Login = React.lazy(() => import('./Pages/Login'));
 const Signup = React.lazy(() => import('./Pages/SignUp'));
-
-export default UrlShortener;

@@ -15,8 +15,8 @@
 .App-footer {
   align-self: center;
   background: #FFFFFF;
-  /* bottom: 0;
-  position: fixed; */
+  bottom: 2vh;
+  position: fixed;
 }
 
 .Primary-btn {

@@ -4,7 +4,7 @@ import Collapsible from '../lib/Collapsible';
 import {
   ellipsisV as OpenIcon,
   times as CloseIcon
-} from '../fa-library';
+} from '../lib/fa-library';
 import './TopNav.css';
 
 export default class TopNav extends React.PureComponent {
