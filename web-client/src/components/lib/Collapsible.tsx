@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Toggle as ToggleBtn } from '../Buttons/Toggle';
-import { ellipsisV, times } from '../fa-library';
 
 interface IProps {
   children?: any
   content: any
+  toggleIcon: JSX.Element
+  toggleIconAfter?: JSX.Element
   variant?: string
 }
 
@@ -20,14 +21,11 @@ export default function Collapsible (props: IProps) {
       <div className={props.variant}>
         {props.children}
 
-        {/* <button onClick={toggleCollapse}>
-          {Collapse ? 'X' : 'O'}
-        </button> */}
         <ToggleBtn
           onClick={toggleCollapse}
           variant="ToggleMenu"
         >
-          {Collapse ? <Close /> : <Open />}
+          {Collapse ? props.toggleIconAfter : props.toggleIcon}
         </ToggleBtn>
       </div>
 
@@ -35,6 +33,3 @@ export default function Collapsible (props: IProps) {
     </>
   );
 }
-
-const Open = ellipsisV;
-const Close = times;

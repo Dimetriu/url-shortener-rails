@@ -1,6 +1,10 @@
 import * as React from 'react';
 import * as NavLink from '../Links/nav';
 import Collapsible from '../lib/Collapsible';
+import {
+  ellipsisV as OpenIcon,
+  times as CloseIcon
+} from '../fa-library';
 import './TopNav.css';
 
 export default class TopNav extends React.PureComponent {
@@ -10,10 +14,12 @@ export default class TopNav extends React.PureComponent {
         <nav>
           <Collapsible
             content={<NavLinkBlock />}
+            toggleIcon={<OpenIcon />}
+            toggleIconAfter={<CloseIcon />}
             variant="TopNav"
           >
             <NavLink.Logo />
-            <div className="row-clearfix"></div>
+            <div className="row-clearfix" />
             <NavLink.SignIn />
             <NavLink.SignUp />
           </Collapsible>
