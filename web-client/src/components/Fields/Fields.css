@@ -1,0 +1,24 @@
+.Form-row {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.Form-row label,
+.Form-row input {
+  margin: 0 0 0.7rem;
+}
+
+.Form-input,
+.Form-action {
+  padding: 0.7rem;
+}
+
+.Form-input {
+  border: 1px solid #9B9B9B;
+  font-size: 1.2em;
+}
+
+.Form-input:focus {
+  border: 1px solid #F16534;
+}
+

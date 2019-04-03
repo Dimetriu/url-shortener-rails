@@ -1,9 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './Login.css';
+import {
+  Email,
+  Password,
+  Submit
+} from '../Fields/index';
 
-export default class Login extends Component {
-  render() {
-    return (
-      <h2>Login</h2>
-    );
-  }
+export default function Login () {
+  return (
+    <section className="Login-container">
+      <h2>Log in</h2>
+
+      <Form>
+        <Email />
+        <Password />
+        <Submit />
+      </Form>
+    </section>
+  );
 }
+
+const Form = React.lazy(() => import('../Forms/FormGroup'));

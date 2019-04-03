@@ -5,11 +5,17 @@
   text-rendering: optimizeSpeed;
 }
 
+.App-header,
+.App-body {
+  background: #FFFFFF;
+}
+
 .App-body {
   align-self: center;
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
+  margin: 10vh 0;
+  min-width: 60vh;
 }
 
 .App-footer {
@@ -24,7 +30,6 @@
   border: none;
   color: #FFFFFF;
   cursor: pointer;
-  height: 36px;
   padding: 0 2vh;
 }
 
@@ -36,17 +41,25 @@
   background-image: linear-gradient(-111deg, #ED3535 4%, #F16534 100%);
 }
 
-@media screen {
+/* @media screen {
   .App-body {
-    /* margin: 30vh 0; */
+    margin: 30vh 0;
   }
-}
+} */
 
-@media (orientation: portrait) {
+/* @media (orientation: landscape) {
   .App-body {
-    /* margin: 40vh 0; */
+    margin: 40vh 0;
+    min-width: 60vw;
   }
-}
+} */
+
+/* @media screen and (orientation: portrait) {
+  .App-body {
+    margin: 40vh 0;
+    min-width: 60vh;
+  }
+} */
 
 @media not screen {
   .App>* {

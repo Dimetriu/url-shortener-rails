@@ -1,0 +1,64 @@
+/* .FormGroup,
+.Form-group-row {
+  display: flex;
+  position: relative;
+}
+
+.inline {
+  flex-flow: row wrap;
+}
+
+.block,
+.Form-group-row {
+  flex-flow: column wrap;
+  text-align: left;
+}
+
+.Form-group-row {
+  margin: 2vh 0;
+}
+
+.Form-group-row>small {
+  color: green;
+}
+
+.valid {
+  color: green;
+}
+
+.Form-group-input {
+  border: none;
+  border: 1px solid #9B9B9B;
+  font-size: 18px;
+  height: 36px;
+  margin-top: 12px;
+  padding: 12px 12px 0;
+  position: relative;
+}
+
+.Form-group-input:focus,
+.Form-group-label {
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.Form-group-input:focus {
+  border: none;
+  border: 1px solid #F16534;
+}
+
+.Form-group-label {
+  color: #9B9B9B;
+  font-size: 14px;
+  margin: 16px 12px;
+  position: absolute;
+}
+
+.Form-group-input:focus+.Form-group-label {
+  color: #F16534;
+  font-size: 10px;
+}
+
+.Submit {
+  height: 48px;
+} */

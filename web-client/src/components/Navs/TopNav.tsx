@@ -10,7 +10,7 @@ import './TopNav.css';
 export default class TopNav extends React.PureComponent {
   render() {
     return (
-      <header>
+      <header className="App-header">
         <nav>
           <Collapsible
             content={<NavLinkBlock />}

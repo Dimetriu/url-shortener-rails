@@ -16,7 +16,7 @@
     "i": "^0.3.6",
     "npm": "^6.8.0",
     "query-string": "^6.3.0",
-    "react": "^16.8.2",
+    "react": "^16.8.6",
     "react-axios": "^2.0.3",
     "react-dom": "^16.8.2",
     "react-placeholder": "^3.0.2",
