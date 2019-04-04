@@ -1,36 +1,44 @@
 import React from 'react';
 import Field from './Field';
-import './Fields.css';
+import './Field.css';
+
+const emailProps = {
+  label: "Email",
+  ofType: "text",
+  inputVariant: "Form-input",
+  labelVariantBefore: "Form-row-label label-before",
+  labelVariantAfter: "Form-row-label label-after",
+  wrapperVariant: "Form-row",
+  hintText: "youbaniwrote",
+  hintVariant: "Form-row-hint standard-hint"
+};
+
+const passwordProps = {
+  label: "Password",
+  ofType: "password",
+  inputVariant: "Form-input",
+  labelVariantBefore: "Form-row-label label-before",
+  labelVariantAfter: "Form-row-label label-after",
+  wrapperVariant: "Form-row",
+  hintText: "Minimum 8 characters",
+  hintVariant: "Form-row-hint standard-hint"
+};
+
+const submitProps = {
+  htmlValue: "Log in",
+  ofType: "submit",
+  inputVariant: "Primary-btn Form-action",
+  wrapperVariant: "Form-row",
+}
 
 export const Email = () => {
-  return (
-    <Field
-      label="Email"
-      ofType="text"
-      inputVariant="Form-input"
-      wrapperVariant="Form-row"
-    />
-  );
+  return  <Field {...emailProps} />;
 }
 
 export const Password = () => {
-  return (
-    <Field
-      label="Password"
-      ofType="password"
-      inputVariant="Form-input"
-      wrapperVariant="Form-row"
-    />
-  );
+  return  <Field {...passwordProps} />;
 }
 
 export const Submit = () => {
-  return (
-    <Field
-      htmlValue="Log in"
-      ofType="submit"
-      inputVariant="Primary-btn Form-action"
-      wrapperVariant="Form-row"
-    />
-  );
+  return <Field {...submitProps} />;
 }

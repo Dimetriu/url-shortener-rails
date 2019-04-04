@@ -6,6 +6,10 @@
   padding: 0 2vw;
 }
 
+.Login-container h2 {
+  padding-bottom: 7%;
+}
+
 @media (orientation: portrait) {
 
   .Login-container {

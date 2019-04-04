@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
 interface IProps {
-  hint?: string
+  hintText?: string
+  hintVariant?: string
   inputVariant?: string
   label?: string
-  labelVariant?: string
+  labelVariantBefore?: string
+  labelVariantAfter?: string
   ofType: string
   htmlValue?: string
   wrapperVariant?: string
@@ -32,7 +34,11 @@ export default function Field (props: IProps) {
 
   const label = (
     <label
-      className={props.labelVariant}
+      className={
+        Value ?
+        props.labelVariantAfter :
+        props.labelVariantBefore
+      }
     >
       {props.label}
     </label>
@@ -40,9 +46,13 @@ export default function Field (props: IProps) {
 
   return (
     <div className={props.wrapperVariant}>
-      {input}
       {label}
-      <small>{props.hint}</small>
+      {input}
+      <small
+        className={props.hintVariant}
+      >
+        <i>{props.hintText}</i>
+      </small>
     </div>
   );
 }

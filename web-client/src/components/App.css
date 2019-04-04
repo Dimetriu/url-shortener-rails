@@ -14,15 +14,18 @@
   align-self: center;
   display: flex;
   flex-flow: column wrap;
+  min-height: 100%;
   margin: 10vh 0;
   min-width: 60vh;
+  padding-bottom: 2rem;
 }
 
 .App-footer {
   align-self: center;
   background: #FFFFFF;
-  bottom: 2vh;
-  position: fixed;
+  bottom: 0;
+  height: 2rem;
+  position: absolute;
 }
 
 .Primary-btn {

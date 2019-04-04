@@ -34,5 +34,5 @@ export default class App extends React.Component {
 }
 
 const TopNav = React.lazy(() => import('./Navs/TopNav'));
-const Login = React.lazy(() => import('./Pages/Login'));
+const Login = React.lazy(() => import('./Login/index'));
 const Signup = React.lazy(() => import('./Pages/SignUp'));
