@@ -9,7 +9,7 @@ const emailProps = {
   labelVariantBefore: "Form-row-label label-before",
   labelVariantAfter: "Form-row-label label-after",
   wrapperVariant: "Form-row",
-  hintText: "youbaniwrote",
+  hintText: "e.g: example@mail.com",
   hintVariant: "Form-row-hint standard-hint"
 };
 

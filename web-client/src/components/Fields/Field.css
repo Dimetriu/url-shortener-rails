@@ -37,12 +37,12 @@
 }
 
 .Form-input,
-.label-before,
-.Form-row small {
+.label-before {
   padding: .7rem;
 }
 
 .Form-action {
+  margin-top: 1rem;
   padding: calc(.7rem + 2px);
 }
 

@@ -1,5 +1,5 @@
 class ApiController < ActionController::API
-  content_security_policy_report_only only: :all
+  # content_security_policy_report_only only: :all
 
   attr_reader :current_user
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as NavLink from '../Links/nav';
+import { Logo, NavigationLink } from '../Links';
 import Collapsible from '../lib/Collapsible';
 import {
   ellipsisV as OpenIcon,
@@ -18,10 +18,10 @@ export default class TopNav extends React.PureComponent {
             toggleIconAfter={<CloseIcon />}
             variant="TopNav"
           >
-            <NavLink.Logo />
+            <Logo />
             <div className="row-clearfix" />
-            <NavLink.SignIn />
-            <NavLink.SignUp />
+            <LinkToLogIn />
+            <LinkToSignUp />
           </Collapsible>
         </nav>
       </header>
@@ -32,8 +32,28 @@ export default class TopNav extends React.PureComponent {
 function NavLinkBlock () {
   return (
     <div className="Nav-link-block">
-      <NavLink.SignIn />
-      <NavLink.SignUp />
+      <LinkToLogIn />
+      <LinkToSignUp />
     </div>
+  );
+}
+
+const LinkToLogIn = () => {
+  return (
+    <NavigationLink
+      to="/login"
+      title="Log in"
+      text="Log in"
+    />
+  );
+}
+
+const LinkToSignUp = () => {
+  return (
+    <NavigationLink
+      to="/signup"
+      title="Sign up"
+      text="Sign up"
+    />
   );
 }

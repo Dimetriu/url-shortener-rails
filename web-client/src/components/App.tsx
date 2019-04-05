@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { Footer } from './Footer';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
 import './lib/fa-library';
 
 import { TextRow } from 'react-placeholder/lib/placeholders';
@@ -16,23 +20,31 @@ export default class App extends React.Component {
     const topNavPlaceholder = <TextRow color='#E0E0E0' />;
 
     return (
-      <Router>
-        <main className="App">
+      <main className="App">
+        <Router>
           <React.Suspense fallback={topNavPlaceholder}>
-            <TopNav />
 
-            <Route path="/" exact component={Home} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
+            <div className="App-body">
+              <TopNav />
+
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Signup} />
+                <Route path="/forgot-password" component={ChangePassword} />
+              </Switch>
+            </div>
+
+            <Footer />
+
           </React.Suspense>
-
-          <Footer />
-        </main>
-      </Router>
+        </Router>
+      </main>
     );
   }
 }
 
 const TopNav = React.lazy(() => import('./Navs/TopNav'));
-const Login = React.lazy(() => import('./Login/index'));
+const Login = React.lazy(() => import('./Login'));
 const Signup = React.lazy(() => import('./Pages/SignUp'));
+const ChangePassword = React.lazy(() => import('./ChangePassword'));

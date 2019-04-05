@@ -1,13 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './styles.css';
+import { NavLink, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export function Logo () {
+interface IProps {
+  to: string
+  text: any
+  title?: string
+  variant?: string
+}
+
+export const Logo = () => {
   const chevronLeft = <FontAwesomeIcon icon="chevron-left" size="xs" />;
   const chevronRight = <FontAwesomeIcon icon="chevron-right" size="xs" />;
 
   return (
-    <Link
+    <NavLink
       to="/"
       className="Logo"
       title="Home"
@@ -15,30 +23,29 @@ export function Logo () {
       {chevronRight}
       &nbsp;Shortencrafts.io&nbsp;
       {chevronLeft}
+    </NavLink>
+  );
+}
+
+export const GeneralLink = (props: IProps) => {
+  return (
+    <Link
+      to={props.to}
+      className={"General-link " + props.variant}
+    >
+      {props.text}
     </Link>
   );
 }
 
-export function SignIn () {
+export const NavigationLink = (props: IProps) => {
   return (
-    <Link
-      to="/login"
+    <NavLink
+      to={props.to}
       className="Nav-link"
-      title="Log in"
+      title={props.title}
     >
-      Log in
-    </Link>
-  );
-}
-
-export function SignUp () {
-  return (
-    <Link
-      to="/signup"
-      className="Nav-link"
-      title="Sign up"
-    >
-      Sign up
-    </Link>
+      {props.text}
+    </NavLink>
   );
 }

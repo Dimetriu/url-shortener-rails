@@ -1,10 +1,11 @@
 import React from 'react';
 import './styles.css';
+import FormHeading from '../Headings';
 
 const Login = () => {
   return (
     <section className="Login-container">
-      <h2>Log in</h2>
+      <FormHeading text="Log in" />
       <LoginForm />
     </section>
   );
