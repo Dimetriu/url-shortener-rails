@@ -13,6 +13,8 @@ jobs:
           POSTGRES_USER: dima
           POSTGRES_DB: url-shortener-rails_test
 
+    parallelism: 4
+
     working_directory: ~/codebase/URL/url-shortener-rails
 
     steps:
