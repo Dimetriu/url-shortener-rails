@@ -1,44 +1,61 @@
-import React from 'react';
-import Field from './Field';
-import './Field.css';
+import React, { useState } from 'react';
+import './styles.css';
 
-const emailProps = {
-  label: "Email",
-  ofType: "text",
-  inputVariant: "Form-input",
-  labelVariantBefore: "Form-row-label label-before",
-  labelVariantAfter: "Form-row-label label-after",
-  wrapperVariant: "Form-row",
-  hintText: "e.g: example@mail.com",
-  hintVariant: "Form-row-hint standard-hint"
-};
-
-const passwordProps = {
-  label: "Password",
-  ofType: "password",
-  inputVariant: "Form-input",
-  labelVariantBefore: "Form-row-label label-before",
-  labelVariantAfter: "Form-row-label label-after",
-  wrapperVariant: "Form-row",
-  hintText: "Minimum 8 characters",
-  hintVariant: "Form-row-hint standard-hint"
-};
-
-const submitProps = {
-  htmlValue: "Log in",
-  ofType: "submit",
-  inputVariant: "Primary-btn Form-action",
-  wrapperVariant: "Form-row",
+interface IProps {
+  hintText?: string
+  hintVariant?: string
+  inputVariant?: string
+  label?: string
+  labelVariantBefore?: string
+  labelVariantAfter?: string
+  ofType: string
+  htmlValue?: string
+  wrapperVariant?: string
 }
 
-export const Email = () => {
-  return  <Field {...emailProps} />;
+const Field = (props: IProps) => {
+  const [Value, setValue] = useState('');
+
+  function handleChange(e: any) {
+    setValue(e.target.value);
+  }
+
+  const input = (
+    <input
+      type={props.ofType}
+      className={props.inputVariant}
+      onChange={handleChange}
+      value={
+        props.ofType === "submit" ?
+          props.htmlValue :
+          Value
+      }
+    />
+  );
+
+  const label = (
+    <label
+      className={
+        Value ?
+          props.labelVariantAfter :
+          props.labelVariantBefore
+      }
+    >
+      {props.label}
+    </label>
+  );
+
+  return (
+    <div className={props.wrapperVariant}>
+      {label}
+      {input}
+      <small
+        className={props.hintVariant}
+      >
+        <i>{props.hintText}</i>
+      </small>
+    </div>
+  );
 }
 
-export const Password = () => {
-  return  <Field {...passwordProps} />;
-}
-
-export const Submit = () => {
-  return <Field {...submitProps} />;
-}
+export default Field;

@@ -9,7 +9,7 @@ interface FormProps {
 
 export default function FormGroup (props: FormProps) {
   return (
-    <form action={props.htmlAction}>
+    <form action={props.htmlAction} className="Form-vertical">
       {props.children}
     </form>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Login/styles.css';
-import { Email, Submit } from '../Fields/index';
 import { GeneralLink } from '../Links';
 import FormHeading from '../Headings';
 
@@ -10,17 +9,19 @@ const ChangePassword = () => {
       <FormHeading text="Provide a recovery email" />
       <Form>
         <Email />
+        <Submit htmlValue="Send instructions" />
         <GeneralLink
           to="/login"
           text="Back to logging in"
           variant="mb-1-rem"
         />
-        <Submit />
       </Form>
     </div>
   );
 }
 
 const Form = React.lazy(() => import('../Forms'));
+const Email = React.lazy(() => import('../Fields/Email'));
+const Submit = React.lazy(() => import('../Fields/Submit'));
 
 export default ChangePassword;

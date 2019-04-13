@@ -1,7 +1,7 @@
 .Form-row {
   display: flex;
   flex-flow: column wrap;
-  margin: 0 0 1vh;
+  margin-bottom: 1.2rem;
   position: relative;
 }
 
@@ -33,7 +33,7 @@
 
 .label-after {
   color: #F16534;
-  margin: -2rem .7rem;
+  margin: -1.5rem .7rem;
 }
 
 .Form-input,

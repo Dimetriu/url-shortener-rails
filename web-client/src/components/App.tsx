@@ -46,5 +46,5 @@ export default class App extends React.Component {
 
 const TopNav = React.lazy(() => import('./Navs/TopNav'));
 const Login = React.lazy(() => import('./Login'));
-const Signup = React.lazy(() => import('./Pages/SignUp'));
+const Signup = React.lazy(() => import('./Signup'));
 const ChangePassword = React.lazy(() => import('./ChangePassword'));
