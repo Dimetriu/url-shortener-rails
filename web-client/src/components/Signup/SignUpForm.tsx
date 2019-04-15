@@ -9,9 +9,8 @@ const LoginForm = () => {
       <Email />
       <Password />
       <Submit htmlValue="Sign up" />
-      <p
-        style={{ color: '#9B9B9B' }}
-      >
+
+      <p style={{ color: '#9B9B9B' }}>
         Have an account? {login}
       </p>
     </Form>

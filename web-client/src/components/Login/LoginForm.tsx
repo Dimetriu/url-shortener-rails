@@ -11,9 +11,7 @@ const LoginForm = () => {
         to="/forgot-password"
         text="Forgot your password?"
       />
-      <p
-        style={{ color: '#9B9B9B' }}
-      >
+      <p style={{ color: '#9B9B9B' }}>
         Don't have an account? {createAccout}
       </p>
     </Form>

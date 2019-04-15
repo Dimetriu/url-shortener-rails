@@ -29,6 +29,7 @@
 
 .label-before {
   color: #9B9B9B;
+  z-index: 0;
 }
 
 .label-after {
@@ -48,8 +49,10 @@
 
 
 .Form-input {
+  background: transparent;
   border: 1px solid #9B9B9B;
   font-size: 1.2em;
+  z-index: 1;
 }
 
 .Form-input:focus {
