@@ -42,6 +42,15 @@ const SignUpForm = () => {
       />
 
       <Submit htmlValue="Sign up" />
+
+      <p style={{ color: '#9B9B9B' }}>
+        Have an Account?&nbsp;
+
+        <GeneralLink
+          to="/login"
+          text="Log in"
+        />
+      </p>
     </Form>
   );
 }

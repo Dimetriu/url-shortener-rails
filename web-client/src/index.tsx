@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import './index.css';
 // import axios from 'axios';
 import { Provider } from 'react-redux';
-import configureStore from './configureStore';
+import configureStore from './store/configureStore';
 
 import App from './components/App';
 

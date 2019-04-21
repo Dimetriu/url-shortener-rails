@@ -28,7 +28,23 @@ const LoginForm = () => {
         value={password}
         onChange={e => setPassword(e.target.value)}
       />
+
+      <GeneralLink
+        to="/forgot-password"
+        text="Forgot password?"
+        variant="Form-row"
+      />
+
       <Submit htmlValue="Log in" />
+
+      <p style={{ color: '#9B9B9B' }}>
+        Don't have an Account?&nbsp;
+
+        <GeneralLink
+          to="/signup"
+          text="Create One"
+        />
+      </p>
     </Form>
   );
 }
