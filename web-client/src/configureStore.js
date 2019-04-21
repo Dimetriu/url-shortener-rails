@@ -6,7 +6,7 @@ import {
 
 import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from './reducers/rootReducer';
+import rootReducer from './reducers';
 import loggerMiddleware from './middleware/logger';
 import monitorReducerEnhancer from './enhancers/monitorReducer';
 

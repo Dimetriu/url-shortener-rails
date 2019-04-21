@@ -1,34 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles.css';
 
 interface IProps {
   hintText?: string
   hintVariant?: string
+  htmlValue?: string
   inputVariant?: string
   label?: string
   labelVariantBefore?: string
   labelVariantAfter?: string
-  ofType: string
-  htmlValue?: string
+  name: string
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  type: string
+  value?: string
   wrapperVariant?: string
 }
 
 const Field = (props: IProps) => {
-  const [Value, setValue] = useState('');
-
-  function handleChange(e: any) {
-    setValue(e.target.value);
-  }
 
   const input = (
     <input
-      type={props.ofType}
+      type={props.type}
       className={props.inputVariant}
-      onChange={handleChange}
+      onChange={props.onChange}
       value={
-        props.ofType === "submit" ?
+        props.type === "submit" ?
           props.htmlValue :
-          Value
+          props.value
       }
     />
   );
@@ -36,7 +34,7 @@ const Field = (props: IProps) => {
   const label = (
     <label
       className={
-        Value ?
+        props.value ?
           props.labelVariantAfter :
           props.labelVariantBefore
       }

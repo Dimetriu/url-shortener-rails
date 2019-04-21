@@ -1,24 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './index.css';
+// import axios from 'axios';
 import { Provider } from 'react-redux';
 import configureStore from './configureStore';
 
 import App from './components/App';
 
 // import * as serviceWorker from './serviceWorker';
-// import axios from 'axios';
-// import {
-//   AxiosProvider,
-//   Request,
-//   Get,
-//   Delete,
-//   Head,
-//   Post,
-//   Put,
-//   Patch,
-//   withAxios
-// } from 'react-axios';
 
 const store = configureStore();
 

@@ -1,13 +1,14 @@
 import React from 'react';
 import Field from './';
 
-const Submit = (props: { htmlValue: string }) => {
+const Submit = (props: {htmlValue: string}) => {
   return (
     <Field
-      htmlValue={props.htmlValue}
-      ofType="submit"
-      inputVariant="Primary-btn Form-action"
+      name="submit"
+      type="submit"
+      inputVariant="Form-submit Primary-btn"
       wrapperVariant="Form-row"
+      htmlValue={props.htmlValue}
     />
   );
 }

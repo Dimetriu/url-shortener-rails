@@ -1,19 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Field from './';
 
-const emailProps = {
-  label: "Email",
-  ofType: "text",
-  inputVariant: "Form-input",
-  labelVariantBefore: "Form-row-label label-before",
-  labelVariantAfter: "Form-row-label label-after",
-  wrapperVariant: "Form-row",
-  hintText: "e.g: example@mail.com",
-  hintVariant: "Form-row-hint standard-hint"
-};
+interface IProps {
+  value: string
+  onChange: (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => void
+}
 
-const Email = () => {
-  return <Field {...emailProps} />;
+const Email = (props: IProps) => {
+  const {
+    value,
+    onChange,
+  } = props;
+
+  return (
+    <Field
+      label="Email"
+      type="text"
+      name="email"
+      inputVariant="Form-input"
+      labelVariantBefore="Form-row-label label-before"
+      labelVariantAfter="Form-row-label label-after"
+      wrapperVariant="Form-row"
+      hintText="e.g: example@mail.com"
+      hintVariant="Form-row-hint standard-hint"
+      value={value}
+      onChange={onChange}
+    />
+  );
 }
 
 export default Email;

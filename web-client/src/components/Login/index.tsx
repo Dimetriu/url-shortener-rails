@@ -11,6 +11,6 @@ const Login = () => {
   );
 }
 
-const LoginForm = React.lazy(() => import('./LoginForm'));
+const LoginForm = React.lazy(() => import('../Forms/LoginForm'));
 
 export default Login;

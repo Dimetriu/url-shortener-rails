@@ -6,7 +6,7 @@ import FormHeading from '../Headings';
 const ChangePassword = () => {
   return (
     <div className="Login-container">
-      <FormHeading text="Provide a recovery email" />
+      {/* <FormHeading text="Provide a recovery email" />
       <Form>
         <Email />
         <Submit htmlValue="Send instructions" />
@@ -15,7 +15,7 @@ const ChangePassword = () => {
           text="Back to logging in"
           variant="mb-1-rem"
         />
-      </Form>
+      </Form> */}
     </div>
   );
 }

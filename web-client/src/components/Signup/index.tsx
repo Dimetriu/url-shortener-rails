@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import FormHeading from '../Headings';
 
-const Login = () => {
+const SignUp = () => {
   return (
     <section className="Signup-container">
       <FormHeading text="Sign up" />
@@ -11,6 +11,6 @@ const Login = () => {
   );
 }
 
-const SignUpForm = React.lazy(() => import('./SignUpForm'));
+const SignUpForm = React.lazy(() => import('../Forms/SignUpForm'));
 
-export default Login;
+export default SignUp;

@@ -38,7 +38,8 @@
 }
 
 .Form-input,
-.label-before {
+.label-before,
+.Form-submit {
   padding: .7rem;
 }
 

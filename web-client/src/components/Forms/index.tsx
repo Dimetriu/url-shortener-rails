@@ -1,16 +1,21 @@
 import React from 'react';
 import './styles.css';
 
-interface FormProps {
+interface IProps {
   children: any
-  htmlAction?: string
   variant?: string
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void
 }
 
-export default function FormGroup (props: FormProps) {
+const Form = (props: IProps) => {
   return (
-    <form action={props.htmlAction} className="Form-vertical">
+    <form
+      className={props.variant}
+      onSubmit={props.onSubmit}
+    >
       {props.children}
     </form>
   );
 }
+
+export default Form;

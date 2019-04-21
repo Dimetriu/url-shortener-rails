@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Footer } from './Footer';
+import AppRoutes from '../routes';
 import './App.css';
 import {
   BrowserRouter as Router,
-  Route,
   Switch
 } from 'react-router-dom';
 import './lib/fa-library';
@@ -28,10 +28,7 @@ export default class App extends React.Component {
               <TopNav />
 
               <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/login" component={Login} />
-                <Route path="/signup" component={Signup} />
-                <Route path="/forgot-password" component={ChangePassword} />
+                <AppRoutes />
               </Switch>
             </div>
 
@@ -45,6 +42,3 @@ export default class App extends React.Component {
 }
 
 const TopNav = React.lazy(() => import('./Navs/TopNav'));
-const Login = React.lazy(() => import('./Login'));
-const Signup = React.lazy(() => import('./Signup'));
-const ChangePassword = React.lazy(() => import('./ChangePassword'));
