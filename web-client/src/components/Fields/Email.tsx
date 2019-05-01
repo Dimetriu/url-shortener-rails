@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Field from './';
+import Field from '.';
 
 interface IProps {
   value: string
@@ -17,7 +17,7 @@ const Email = (props: IProps) => {
   return (
     <Field
       label="Email"
-      type="text"
+      type="email"
       name="email"
       inputVariant="Form-input"
       labelVariantBefore="Form-row-label label-before"

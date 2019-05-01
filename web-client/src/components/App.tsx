@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Footer } from './Footer';
 import AppRoutes from '../routes';
 import './App.css';
 import {
@@ -42,3 +41,4 @@ export default class App extends React.Component {
 }
 
 const TopNav = React.lazy(() => import('./Navs/TopNav'));
+const Footer = React.lazy(() => import('./Footer'));

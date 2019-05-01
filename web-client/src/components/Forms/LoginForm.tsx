@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { GeneralLink } from '../Links';
 
 const LoginForm = () => {

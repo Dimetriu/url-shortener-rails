@@ -1,2 +1,2 @@
-web: PORT=4000 yarn --cwd web-client start
+web: PORT=3000 yarn --cwd web-client start
 api: PORT=3001 puma -p 3001

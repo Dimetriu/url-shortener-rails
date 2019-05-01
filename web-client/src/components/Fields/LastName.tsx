@@ -19,7 +19,7 @@
 // export default LastName;
 
 import React, { useState } from 'react';
-import Field from './';
+import Field from '.';
 
 interface IProps {
   value: string

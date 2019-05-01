@@ -12,6 +12,7 @@ const monitorReducerEnhancer = createStore => (
     const diff = round(end - start)
 
     console.log('reducer process time:', diff)
+    console.log(process.env.REACT_APP_API_HOST)
 
     return newState;
   }

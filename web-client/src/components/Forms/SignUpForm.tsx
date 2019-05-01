@@ -1,28 +1,42 @@
 import React, { useState } from 'react';
 import { GeneralLink } from '../Links';
+import { connect } from 'react-redux';
 
-const SignUpForm = () => {
+import { signUpUser } from '../../store/user/actions';
+
+interface IProps {
+  signUpUserAction?: string
+  dispatch: any
+}
+
+const SignUpForm = (props: IProps) => {
+  const [errors, setErrors] = useState({})
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [passwordConfirmation, setPasswordConfirmation] = useState('')
 
   const formData = {
     firstname: firstName,
     lastname: lastName,
     email: email,
     password: password,
+    password_confirmation: password,
+    errors: errors,
   }
 
-  const handleLoginSubmit = (e: any) => {
+
+  const handleSignUpSubmit = (e: any) => {
     e.preventDefault();
     console.log(formData);
+    props.dispatch(signUpUser(formData))
   }
 
   return (
     <Form
       variant="Form-group-vertical"
-      onSubmit={handleLoginSubmit}
+      onSubmit={handleSignUpSubmit}
     >
       <FirstName
         value={firstName}
@@ -39,6 +53,10 @@ const SignUpForm = () => {
       <Password
         value={password}
         onChange={e => setPassword(e.target.value)}
+      />
+      <Password
+        value={passwordConfirmation}
+        onChange={e => setPasswordConfirmation(e.target.value)}
       />
 
       <Submit htmlValue="Sign up" />
@@ -62,4 +80,6 @@ const Email = React.lazy(() => import('../Fields/Email'))
 const Password = React.lazy(() => import('../Fields/Password'))
 const Submit = React.lazy(() => import('../Fields/Submit'))
 
-export default SignUpForm;
+const mapStateToProps = (response: any) => ({ response })
+
+export default connect(mapStateToProps)(SignUpForm);

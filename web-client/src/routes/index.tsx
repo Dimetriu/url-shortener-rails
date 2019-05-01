@@ -9,9 +9,9 @@ const AppRoutes = () => {
   return (
     <>
       <Route path= "/" exact component={Home} />
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
-      <Route path="/forgot-password" component={ChangePassword} />
+      <Route path="/login" render={() => <Login />} />
+      <Route path="/signup" render={() => <Signup />} />
+      <Route path="/forgot-password" render={() => <ChangePassword />} />
     </>
   );
 }

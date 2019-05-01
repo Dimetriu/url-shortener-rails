@@ -19,7 +19,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/web-client/src/.env*
+/web-client/.env*
 /config/secrets.yml
 
 # Ignore master key for decrypting credentials and more.
