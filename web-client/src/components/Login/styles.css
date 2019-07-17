@@ -1,0 +1,25 @@
+.Login-container {
+  background: #FFFFFF;
+  display: flex;
+  flex-flow: column wrap;
+  margin: 5vh auto;
+  padding: 0 2vw;
+}
+
+.Login-container h2 {
+  padding-bottom: 3%;
+}
+
+@media (orientation: portrait) {
+
+  .Login-container {
+    width: 85vw;
+  }
+}
+
+@media (orientation: landscape) {
+
+  .Login-container {
+    width: 25rem;
+  }
+}

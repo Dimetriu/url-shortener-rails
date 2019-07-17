@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6-node-browsers-legacy
+      - image: circleci/ruby:2.6.2-node-browsers-legacy
         environment:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
@@ -12,6 +12,8 @@ jobs:
         environment:
           POSTGRES_USER: dima
           POSTGRES_DB: url-shortener-rails_test
+
+    parallelism: 4
 
     working_directory: ~/codebase/URL/url-shortener-rails
 

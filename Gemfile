@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.1'
+ruby '2.6.2'
 
 # Shim to load environment variables from .env into ENV in development.
 gem 'dotenv-rails', require: 'dotenv/rails-now'
@@ -18,6 +18,8 @@ gem 'redis', '~> 4.0'
 gem 'hiredis'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# Use Json Web Token for token-based authentication
+gem 'jwt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -33,6 +35,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot_rails'
+  gem 'faker',
+  git: 'https://github.com/stympy/faker.git',
+  branch: 'master'
 end
 
 group :development do
